@@ -1,0 +1,6 @@
+- name: Ping switches
+  hosts: all
+  gather_facts: no
+  tasks:
+    - name: Ping the switches
+      ping:
