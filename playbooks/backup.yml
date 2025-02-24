@@ -1,0 +1,13 @@
+- hosts: all
+  collections:
+    - arubanetworks.aoscx
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+  gather_facts: False
+  tasks:
+  - name: Copy Startup Config to TFTP server as CLI
+    aoscx_backup_config:
+     config_name: startup-config
+     remote_output_file_tftp_path: tftp://10.0.0.2/startup.cli
+     config_type: cli
+     vrf: mgmt
