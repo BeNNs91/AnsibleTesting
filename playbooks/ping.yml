@@ -7,20 +7,3 @@
   tasks:
     - name: Ping the Aruba switch
       ansible.builtin.ping:
-
-
-
-#- name: Retrieve Aruba AOS-CX Running Configuration
-#  hosts: all
-#  collections:
-#    - arubanetworks.aoscx
-#  gather_facts: False
-#  tasks:
-#    - name: Run show running-configuration command
-#      arubanetworks.aoscx.aoscx_command:
-#        commands: ["show running-configuration"]
-#      register: config_output
-#
-#    - name: Display Configuration Output
-#      debug:
-#        msg: "{{ config_output.stdout_lines }}"

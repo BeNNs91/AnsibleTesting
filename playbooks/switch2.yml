@@ -1,0 +1,28 @@
+- hosts: aoscx_2
+  collections:
+    - arubanetworks.aoscx
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+  gather_facts: False
+  tasks:
+  - name: Create VLAN Interface 10
+    aoscx_vlan_interface:
+      vlan_id: 10
+      description: UPLINK_VLAN
+      ipv4:
+        - 10.0.10.10/24
+      vrf: default
+#- hosts: aoscx_3
+#  collections:
+#    - arubanetworks.aoscx
+#  vars:
+#    ansible_python_interpreter: /usr/bin/python3
+#  gather_facts: False
+#  tasks:
+#  - name: Create VLAN Interface 10
+#    aoscx_vlan_interface:
+#      vlan_id: 10
+#      description: UPLINK_VLAN
+#      ipv4:
+#        - 10.0.10.11/24
+#      vrf: default
